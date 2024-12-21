@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -51,135 +51,160 @@
 </body>
 </html>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the menu at Alfie's Restaurant">
-    <meta name="keywords" content="Alfie's Restaurant, Menu, Food">
-    <meta name="author" content="Alfie's Restaurant">
-    <title>Alfie's Restaurant - Menu</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="locations.html">Locations</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <main>
-        <section id="menu">
-            <h2>Our Menu</h2>
-            <ul>
-                <li><strong>Breakfast Special:</strong> Full Irish Breakfast - €10.99</li>
-                <li><strong>Lunch:</strong> Gourmet Burger with Fries - €12.99</li>
-                <li><strong>Dinner:</strong> Grilled Salmon with Vegetables - €18.99</li>
-                <li><strong>Desserts:</strong> Chocolate Lava Cake - €6.99</li>
-            </ul>
-        </section>
-    </main>
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+}
 
-    <footer>
-        <p>&copy; 2024 Alfie's Restaurant. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
+header nav ul li {
+    margin: 0;
+}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find Alfie's Restaurant locations across Ireland">
-    <meta name="keywords" content="Alfie's Restaurant, Locations, Ireland">
-    <meta name="author" content="Alfie's Restaurant">
-    <title>Alfie's Restaurant - Locations</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="locations.html">Locations</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
 
-    <main>
-        <section id="locations">
-            <h2>Our Locations</h2>
-            <p>We are proud to serve you at multiple locations across Ireland:</p>
-            <ul>
-                <li><strong>Dublin:</strong> Main Street, Dublin</li>
-                <li><strong>Cork:</strong> Harbour Road, Cork</li>
-                <li><strong>Galway:</strong> Ocean Drive, Galway</li>
-                <li><strong>Limerick:</strong> Riverbank Avenue, Limerick</li>
-            </ul>
-        </section>
-    </main>
+header nav ul li a:hover {
+    background-color: #575757;
+}
 
-    <footer>
-        <p>&copy; 2024 Alfie's Restaurant. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+    header nav ul li a {
+        text-align: center;
+    }
+}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Alfie's Restaurant">
-    <meta name="keywords" content="Alfie's Restaurant, Contact">
-    <meta name="author" content="Alfie's Restaurant">
-    <title>Alfie's Restaurant - Contact</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="locations.html">Locations</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
 
-    <main>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+.slider img {
+    width: 100%;
+    display: none;
+}
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+.slider img.active {
+    display: block;
+}
 
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject">
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
+#prev {
+    left: 10px;
+}
 
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
+#next {
+    right: 10px;
+}
 
-    <footer>
-        <p>&copy; 2024 Alfie's Restaurant. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
+@media (max-width: 768px) {
+    #prev, #next {
+        padding: 5px;
+    }
+}
+
+.accordion .accordion-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.accordion .accordion-content {
+    display: none;
+    padding: 15px;
+    background-color: #f1f1f1;
+}
+
+.accordion .accordion-content.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .accordion .accordion-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .accordion .accordion-content {
+        font-size: 12px;
+    }
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    #contact-form {
+        padding: 10px;
+    }
+    #contact-form label {
+        font-size: 14px;
+    }
+    #contact-form input, #contact-form textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
