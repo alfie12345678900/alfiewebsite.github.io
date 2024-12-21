@@ -48,163 +48,45 @@
     <footer>
         <p>&copy; 2024 Alfie's Restaurant. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript for Image Slider
+        const slides = document.querySelectorAll(".slider img");
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === index);
+            });
+        }
+
+        document.getElementById("prev").addEventListener("click", () => {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById("next").addEventListener("click", () => {
+            currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+            showSlide(currentSlide);
+        });
+
+        // JavaScript for Accordion
+        const accordionButtons = document.querySelectorAll(".accordion-btn");
+        accordionButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const content = button.nextElementSibling;
+                content.classList.toggle("active");
+            });
+        });
+
+        // JavaScript for Contact Form Submission
+        const contactForm = document.getElementById("contact-form");
+        contactForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const formData = new FormData(contactForm);
+            alert(`Thank you, ${formData.get("name")}! We will respond to your query soon.`);
+            contactForm.reset();
+        });
+    </script>
 </body>
 </html>
-
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    background-color: #333;
-}
-
-header nav ul li {
-    margin: 0;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    display: block;
-}
-
-header nav ul li a:hover {
-    background-color: #575757;
-}
-
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-    }
-    header nav ul li a {
-        text-align: center;
-    }
-}
-
-.slider {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.slider img {
-    width: 100%;
-    display: none;
-}
-
-.slider img.active {
-    display: block;
-}
-
-#prev, #next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-#prev {
-    left: 10px;
-}
-
-#next {
-    right: 10px;
-}
-
-@media (max-width: 768px) {
-    #prev, #next {
-        padding: 5px;
-    }
-}
-
-.accordion .accordion-btn {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 15px;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    margin-bottom: 5px;
-}
-
-.accordion .accordion-content {
-    display: none;
-    padding: 15px;
-    background-color: #f1f1f1;
-}
-
-.accordion .accordion-content.active {
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .accordion .accordion-btn {
-        font-size: 14px;
-        padding: 10px;
-    }
-    .accordion .accordion-content {
-        font-size: 12px;
-    }
-}
-
-#contact-form {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-#contact-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-#contact-form input, #contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#contact-form button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-    #contact-form {
-        padding: 10px;
-    }
-    #contact-form label {
-        font-size: 14px;
-    }
-    #contact-form input, #contact-form textarea {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
