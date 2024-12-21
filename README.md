@@ -51,8 +51,6 @@
 </body>
 </html>
 
-<!-- menu.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -94,8 +92,6 @@
 </body>
 </html>
 
-<!-- locations.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -138,8 +134,6 @@
 </body>
 </html>
 
-<!-- contact.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
